@@ -1,0 +1,8 @@
+{
+  "name": "Python Git Poetry",
+  "description": "Start Python project with Git init & Poetry init",
+  "categories": ["Python"],
+  "icon": "https://www.gstatic.com/monospace/231115/logo_python.svg",
+  "publisher": "cappelchi",
+  "params": []
+}
