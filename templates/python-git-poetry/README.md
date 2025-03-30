@@ -1,4 +1,4 @@
-<a href="https://idx.google.com/import?url=https://github.com/cappelchi/project-idx/templates/python-git-poetry">
+<a href="https://idx.google.com/new?template=https://github.com/cappelchi/project-idx/tree/master/templates/python-git-poetry">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
@@ -12,3 +12,10 @@
       src="https://cdn.idx.dev/btn/open_purple_32.svg">
   </picture>
 </a>
+
+git
+python312
+python311
+python310
+poetry
+project rules for gemini
