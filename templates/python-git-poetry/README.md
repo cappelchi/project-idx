@@ -12,10 +12,6 @@
       src="https://cdn.idx.dev/btn/open_purple_32.svg">
   </picture>
 </a>
-
-git
-python312
-python311
-python310
-poetry
+<br>
+git | python312 | python311 | python310 | poetry <br>
 project rules for gemini
