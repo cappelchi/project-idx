@@ -1,4 +1,4 @@
-<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Fcappelchi%2Fproject-idx%2Fnew%2Fmaster%2Ftemplates%2Fpython-git-poetry">
+<a href="https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fcappelchi%2Fproject-idx%2Fnew%2Fmaster%2Ftemplates%2Fpython-git-poetry">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
