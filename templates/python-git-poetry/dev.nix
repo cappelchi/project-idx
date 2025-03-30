@@ -67,14 +67,17 @@ workspace = {
 
 	onCreate = {
 		create-venv = ''
-      if ! git status &> /dev/null; then git init; fi
+      if ! git status &> /dev/null; then 
+	git init
+	git config --global init.defaultBranch master
+      fi
       [ -f ./rules_for_writing_with_python.md ] || wget -q -O ./rules_for_writing_with_python.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_python.md
       [ -f ./rules_for_writing_tests_FastAPI.md ] || wget -q -O ./rules_for_writing_tests_FastAPI.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_tests_FastAPI.md
       [ -f ./rules_for_writing_with_pandas.md ] || wget -q -O ./rules_for_writing_with_pandas.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_pandas.md
       [ -f ./rules_for_writing_with_scikit_learn.md ] || wget -q -O ./rules_for_writing_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_scikit_learn.md
       [ -f ./rules_for_data_analysis_with_scikit_learn.md ] || wget -q -O ./rules_for_data_analysis_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_data_analysis_with_scikit_learn.md
       [ -f ./general_rules.md ] || wget -q -O ./general_rules.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/general_rules.md
-      if [ ! -f pyproject.toml ]; then poetry init; fi
+      if [ ! -f pyproject.toml ]; then poetry init --no-interaction; fi
             # Условная активация poetry shell
       if poetry env info | grep -q 'Virtualenv'; then
         echo "Poetry shell already active (onCreate)."
@@ -89,14 +92,17 @@ workspace = {
 # Runs when the workspace is (re)started
 	onStart = {
 		active-venv = ''
-      if ! git status &> /dev/null; then git init; fi
+      if ! git status &> /dev/null; then 
+	git init
+	git config --global init.defaultBranch master
+      fi
       [ -f ./rules_for_writing_with_python.md ] || wget -q -O ./rules_for_writing_with_python.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_python.md
       [ -f ./rules_for_writing_tests_FastAPI.md ] || wget -q -O ./rules_for_writing_tests_FastAPI.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_tests_FastAPI.md
       [ -f ./rules_for_writing_with_pandas.md ] || wget -q -O ./rules_for_writing_with_pandas.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_pandas.md
       [ -f ./rules_for_writing_with_scikit_learn.md ] || wget -q -O ./rules_for_writing_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_scikit_learn.md
       [ -f ./rules_for_data_analysis_with_scikit_learn.md ] || wget -q -O ./rules_for_data_analysis_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_data_analysis_with_scikit_learn.md
       [ -f ./general_rules.md ] || wget -q -O ./general_rules.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/general_rules.md 
-      if [ ! -f pyproject.toml ]; then poetry init; fi
+      if [ ! -f pyproject.toml ]; then poetry init --no-interaction; fi
       # Условная активация poetry shell
       if poetry env info | grep -q 'Virtualenv'; then
         echo "Poetry shell already active (onStart)."
