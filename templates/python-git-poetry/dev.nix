@@ -79,11 +79,11 @@ workspace = {
       [ -f ./general_rules.md ] || wget -q -O ./general_rules.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/general_rules.md
       if [ ! -f pyproject.toml ]; then poetry init; fi
             # Условная активация poetry shell
-      if poetry env info | grep -q 'Virtualenv'; then
-        echo "Poetry shell already active (onCreate)."
+      if [[ "$POETRY_ACTIVE" != "1" ]]; then
+	echo "Poetry shell not active. Activating... (onCreate)"
+	poetry shell
       else
-        echo "Activating poetry shell (onCreate)..."
-        poetry shell
+	echo "Poetry shell is already active (onCreate)."
       fi
       poetry update
       poetry env info
@@ -104,11 +104,11 @@ workspace = {
       [ -f ./general_rules.md ] || wget -q -O ./general_rules.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/general_rules.md 
       if [ ! -f pyproject.toml ]; then poetry init; fi
       # Условная активация poetry shell
-      if poetry env info | grep -q 'Virtualenv'; then
-        echo "Poetry shell already active (onStart)."
+      if [[ "$POETRY_ACTIVE" != "1" ]]; then
+	echo "Poetry shell not active. Activating... (onStart)"
+	poetry shell
       else
-        echo "Activating poetry shell (onStart)..."
-        poetry shell
+	echo "Poetry shell is already active (onStart)."
       fi
       poetry update
       poetry env info
