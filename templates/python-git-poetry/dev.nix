@@ -77,7 +77,7 @@ workspace = {
       [ -f ./rules_for_writing_with_scikit_learn.md ] || wget -q -O ./rules_for_writing_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_scikit_learn.md
       [ -f ./rules_for_data_analysis_with_scikit_learn.md ] || wget -q -O ./rules_for_data_analysis_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_data_analysis_with_scikit_learn.md
       [ -f ./general_rules.md ] || wget -q -O ./general_rules.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/general_rules.md
-      if [ ! -f pyproject.toml ]; then poetry init; fi
+      if [ ! -f pyproject.toml ]; then poetry init --no-interaction; fi
             # Условная активация poetry shell
       if [[ "$POETRY_ACTIVE" != "1" ]]; then
 	echo "Poetry shell not active. Activating... (onCreate)"
@@ -102,7 +102,7 @@ workspace = {
       [ -f ./rules_for_writing_with_scikit_learn.md ] || wget -q -O ./rules_for_writing_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_writing_with_scikit_learn.md
       [ -f ./rules_for_data_analysis_with_scikit_learn.md ] || wget -q -O ./rules_for_data_analysis_with_scikit_learn.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/rules_for_data_analysis_with_scikit_learn.md
       [ -f ./general_rules.md ] || wget -q -O ./general_rules.md https://raw.githubusercontent.com/cappelchi/rules/refs/heads/master/general_rules.md 
-      if [ ! -f pyproject.toml ]; then poetry init; fi
+      if [ ! -f pyproject.toml ]; then poetry init --no-interaction; fi
       # Условная активация poetry shell
       if [[ "$POETRY_ACTIVE" != "1" ]]; then
 	echo "Poetry shell not active. Activating... (onStart)"
